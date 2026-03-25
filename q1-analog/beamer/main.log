@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.1)  24 MAR 2026 13:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.1)  25 MAR 2026 17:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,17 +853,29 @@ File: ts1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 <figs/circuit.png, id=34, 685.56125pt x 219.82124pt>
 File: figs/circuit.png Graphic file (type png)
 <use figs/circuit.png>
-Package pdftex.def Info: figs/circuit.png  used on input line 102.
+Package pdftex.def Info: figs/circuit.png  used on input line 100.
 (pdftex.def)             Requested size: 342.2953pt x 109.7594pt.
  [3
 
- <./figs/circuit.png>] [4
+ <./figs/circuit.png>]
+Overfull \hbox (16.16884pt too wide) detected at line 135
+\OT1/mathkerncmss/m/sl/10.95 V[]\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 t\OT1/cmss/m/n/10.95 ) = [] [] [] [](\OT1/mathkerncmss/m/sl/10.95 n\OML/cmm/m/it/10.95 ![]\OT1/mathkerncmss/m/sl/10.95 t\OT1/cmss/m/n/10.95 ) = []  []
+ []
+
+[4
 
 ] [5
 
 ] [6
 
-] [7
+]
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 232.
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 232.
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 232.
+ [7
 
 ] [8
 
@@ -873,18 +885,30 @@ Package pdftex.def Info: figs/circuit.png  used on input line 102.
 
 ] [11
 
+] [12
+
+] [13
+
+] [14
+
+] [15
+
+] [16
+
+] [17
+
 ]
-<figs/waveforms.png, id=89, 665.8476pt x 547.3248pt>
+<figs/waveforms.png, id=121, 665.8476pt x 547.3248pt>
 File: figs/waveforms.png Graphic file (type png)
 <use figs/waveforms.png>
-Package pdftex.def Info: figs/waveforms.png  used on input line 304.
+Package pdftex.def Info: figs/waveforms.png  used on input line 485.
 (pdftex.def)             Requested size: 239.60567pt x 196.95326pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{Fig1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.304 \end{frame}
-                  [12
+l.485 \end{frame}
+                  [18
 
  <./figs/waveforms.png>]
 \openout4 = `main.vrb'.
@@ -2590,7 +2614,7 @@ or specify an encoding such as \usepackage [latin1]{inputenc}
 in the document preamble.
 Alternatively, save the file in UTF-8 using your editor or another tool
 
-) [13
+) [19
 
 ]
 \openout4 = `main.vrb'.
@@ -4293,7 +4317,7 @@ or specify an encoding such as \usepackage [latin1]{inputenc}
 in the document preamble.
 Alternatively, save the file in UTF-8 using your editor or another tool
 
-) [14
+) [20
 
 ]
 \openout4 = `main.vrb'.
@@ -6883,7 +6907,7 @@ or specify an encoding such as \usepackage [latin1]{inputenc}
 in the document preamble.
 Alternatively, save the file in UTF-8 using your editor or another tool
 
-) [15
+) [21
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 \openout4 = `main.vrb'.
@@ -8015,10 +8039,20 @@ in the document preamble.
 Alternatively, save the file in UTF-8 using your editor or another tool
 
 )
-Overfull \vbox (8.52684pt too high) detected at line 456
+Overfull \vbox (8.52684pt too high) detected at line 637
  []
 
-[16
+[22
+
+]
+\openout4 = `main.vrb'.
+
+ (./main.vrb) [23
+
+]
+\openout4 = `main.vrb'.
+
+ (./main.vrb) [24
 
 ]
 \tf@nav=\write6
@@ -8043,18 +8077,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26834 strings out of 474222
- 504507 string characters out of 5748734
- 2323975 words of memory out of 5000000
- 48503 multiletter control sequences out of 15000+600000
- 568184 words of font info for 73 fonts, out of 8000000 for 9000
+ 26892 strings out of 474222
+ 505190 string characters out of 5748734
+ 2322975 words of memory out of 5000000
+ 48541 multiletter control sequences out of 15000+600000
+ 568772 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,14n,131p,426b,1523s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb>
-Output written on main.pdf (16 pages, 356367 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb>
+Output written on main.pdf (24 pages, 384274 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
+ 248 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
  59 words of extra memory for PDF output out of 10000 (max. 10000000)
 

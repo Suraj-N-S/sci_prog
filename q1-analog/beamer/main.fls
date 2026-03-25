@@ -1,4 +1,4 @@
-PWD /home/suraj-n/sci_prog/q1-analog/beamer
+PWD /home/suraj-n/Documents/sci_prog/q1-analog/beamer
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
@@ -428,6 +428,8 @@ INPUT ./figs/circuit.png
 INPUT ./figs/circuit.png
 INPUT ./figs/circuit.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT ./figs/waveforms.png
 INPUT ./figs/waveforms.png
 INPUT ./figs/waveforms.png
@@ -462,6 +464,14 @@ OUTPUT main.vrb
 INPUT ./main.vrb
 INPUT ./main.vrb
 INPUT main.vrb
+OUTPUT main.vrb
+INPUT ./main.vrb
+INPUT ./main.vrb
+INPUT main.vrb
+OUTPUT main.vrb
+INPUT ./main.vrb
+INPUT ./main.vrb
+INPUT main.vrb
 OUTPUT main.nav
 OUTPUT main.toc
 OUTPUT main.snm
@@ -483,4 +493,5 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb

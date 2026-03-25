@@ -95,11 +95,192 @@ and 50\,Hz at the output is:
   \includegraphics[width=1\columnwidth]{figs/circuit.png} 
   \caption*{Fig : Circuit}
   \label{Fig1}
-\end{figure}
-
-
+\end{figure} 
 
 \end{frame}
+
+ 
+%-------------------------------------------------------------
+\begin{frame}{Step 1: Fourier Series of the Square Wave}
+ 
+The input is a bipolar square wave with amplitude $V_p = 5\,\mathrm{V}$,
+fundamental $\omega_0 = 2\pi f_0 = 100\pi\,\mathrm{rad/s}$.
+ 
+The Fourier series coefficients $b_n$ are computed as:
+\[
+  b_n = \frac{2}{T}\int_0^T V_{\mathrm{in}}(t)\sin(n\omega_0 t)\,dt
+\]
+ 
+Since the square wave is odd and has half-wave symmetry,
+only odd $n$ contribute, giving:
+\[
+  b_n =
+  \begin{cases}
+    \dfrac{4V_p}{n\pi} & n = 1, 3, 5, \ldots \\[6pt]
+    0                  & n \text{ even}
+  \end{cases}
+\]
+ 
+The complete Fourier series is:
+\[
+  V_{\mathrm{in}}(t)
+  = \frac{4V_p}{\pi}
+    \sum_{\substack{n=1 \\ n\,\mathrm{odd}}}^{\infty}
+    \frac{1}{n}\sin(n\omega_0 t)
+  = \frac{4V_p}{\pi}\!\left[\sin\omega_0 t
+    + \tfrac{1}{3}\sin 3\omega_0 t
+    + \tfrac{1}{5}\sin 5\omega_0 t + \cdots\right]
+\]
+ 
+\end{frame}
+ 
+%-------------------------------------------------------------
+\begin{frame}{Step 2: Laplace Transfer Function -- Stage 1}
+ 
+The inverting integrator has input impedance $Z_{\mathrm{in}}(s) = R_1$
+and feedback impedance $Z_f(s) = 1/(sC)$.
+ 
+For an inverting op-amp configuration:
+\[
+  H_1(s) = -\frac{Z_f(s)}{Z_{\mathrm{in}}(s)}
+          = -\frac{1/(sC)}{R_1}
+          = -\frac{1}{sR_1C}
+\]
+ 
+Evaluating on the imaginary axis $s = jn\omega_0$ for the $n$-th harmonic:
+\[
+  H_1(jn\omega_0)
+  = -\frac{1}{jn\omega_0 R_1 C}
+  = \frac{+j}{n\omega_0 R_1 C}
+\]
+ 
+The magnitude and phase are:
+\[
+  \left|H_1(jn\omega_0)\right| = \frac{1}{n\omega_0 R_1 C}
+  \qquad
+  \angle H_1(jn\omega_0) = +90^\circ
+\]
+ 
+The $+90^\circ$ phase means each input sine harmonic
+becomes a \textbf{cosine} at the integrator output.
+ 
+\end{frame}
+ 
+%-------------------------------------------------------------
+\begin{frame}{Step 3: Laplace Transfer Function -- Stage 2}
+ 
+The inverting amplifier has:
+ 
+\begin{enumerate}
+  \item Input impedance: $Z_{\mathrm{in2}}(s) = 1\,\mathrm{k}\Omega$
+  \item Feedback impedance: $Z_{f2}(s) = R\,\mathrm{k}\Omega$
+\end{enumerate}
+ 
+Its transfer function is frequency-independent:
+\[
+  H_2(s) = -\frac{R\,[\mathrm{k}\Omega]}{1\,[\mathrm{k}\Omega]} = -R
+  \qquad\Longrightarrow\qquad
+  \left|H_2\right| = R
+\]
+ 
+With $R = 1\,\mathrm{k}\Omega$ and input $= 1\,\mathrm{k}\Omega$, $|H_2| = 1$.
+ 
+The double sign inversion (Stage 1 inverts, Stage 2 inverts again)
+means the output is \textbf{in phase} with the integrator output.
+ 
+The overall magnitude at each harmonic is:
+\[
+  \left|H(jn\omega_0)\right|
+  = \left|H_1(jn\omega_0)\right| \times \left|H_2\right|
+  = \frac{1}{n\omega_0 R_1 C} \times R
+  = \frac{R}{n\omega_0 R_1 C}
+\]
+ 
+\end{frame}
+ 
+%-------------------------------------------------------------
+\begin{frame}{Step 4: Output Fourier Series}
+ 
+The amplitude of the $n$-th harmonic at the output is:
+\[
+  A_{\mathrm{out},n}
+  = \left|H(jn\omega_0)\right| \times b_n
+  = \frac{R}{n\omega_0 R_1 C} \times \frac{4V_p}{n\pi}
+  = \frac{4V_p R}{n^2\,\pi\,\omega_0 R_1 C}
+\]
+ 
+The output decays as $1/n^2$. Accounting for the $-90^\circ$ ($+90^\circ - 180^\circ$) phase
+(sines become cosines), the output Fourier series is:
+\[
+  V_{\mathrm{out}}(t)
+  = -\frac{4V_p R}{\pi\,\omega_0 R_1 C}
+    \sum_{\substack{n=1 \\ n\,\mathrm{odd}}}^{\infty}
+    \frac{1}{n^2}\cos(n\omega_0 t)
+\]
+ 
+The standard Fourier series of a triangular wave of peak $A$ is:
+\[
+  V_{\mathrm{tri}}(t)
+  = \frac{8A}{\pi^2}
+    \sum_{\substack{n=1 \\ n\,\mathrm{odd}}}^{\infty}
+    \frac{(-1)^{(n-1)/2}}{n^2}\cos(n\omega_0 t)
+\]
+ 
+Both series decay as $\mathbf{1/n^2}$, \textbf{confirming the output
+is exactly a triangular wave}.
+ 
+\end{frame}
+ 
+%-------------------------------------------------------------
+ 
+%-------------------------------------------------------------
+\begin{frame}{Step 6: Computing the Peak-to-Peak Amplitude}
+ 
+Matching the output series with the triangular wave series at $n=1$:
+\[
+  \frac{8A}{\pi^2} = \frac{4V_p R}{\pi\,\omega_0 R_1 C}
+\]
+ 
+Solving for the peak amplitude $A$:
+\[
+  A = \frac{\pi\,V_p\,R}{2\,\omega_0\,R_1\,C}
+\]
+ 
+The peak-to-peak value is $V_{\mathrm{out,pp}} = 2A$:
+\[
+  V_{\mathrm{out,pp}}
+  = \frac{\pi\,V_p\,R}{\omega_0\,R_1\,C}
+\]
+ 
+Substituting $\omega_0 = 2\pi f_0 = 100\pi$, $V_p = 5\,\mathrm{V}$,
+$R_1 = 10^4\,\Omega$, $C = C_\mu \times 10^{-6}\,\mathrm{F}$, $R = R_{\mathrm{k}}\times10^3\,\Omega$:
+\[
+  V_{\mathrm{out,pp}}
+  = \frac{\pi \times 5 \times R_{\mathrm{k}}\times10^3}
+         {100\pi \times 10^4 \times C_\mu\times10^{-6}}
+  = \frac{5\,R_{\mathrm{k}}}{C_\mu}
+\]
+ 
+\end{frame}
+ 
+%-------------------------------------------------------------
+\begin{frame}{Step 7: Design Condition}
+ 
+Setting $V_{\mathrm{out,pp}} = 5\,\mathrm{V}$:
+\[
+  \frac{5\,R_{\mathrm{k}}}{C_\mu} = 5
+  \quad\Longrightarrow\quad
+  \frac{R_{\mathrm{k}}}{C_\mu} = 1
+  \]
+ 
+where $R$ is in $\mathrm{k}\Omega$ and $C$ is in $\mu\mathrm{F}$.
+ 
+This is the same result as the time-domain approach. 
+\end{frame}
+ 
+%-------------------------------------------------------------
+
+
 
 \begin{frame}{Step 1: Deriving Output of Integrator Circuit}
  
@@ -203,7 +384,7 @@ The circuit has two stages:
         Inverts and scales the triangular ramp.
 \end{enumerate}
 
-The transfer functions are:
+The output of integrator and amplifier are:
 \[
   V_{\mathrm{int}}(t) = -\frac{1}{R_1 C}\int_0^t V_{\mathrm{in}}(\tau)\,d\tau
 \]
@@ -316,14 +497,14 @@ f       = 50        # Hz
 T       = 1.0 / f   # Period = 20 ms
 R1      = 10**4      # Integrator input resistor = 10 kΩ  (Ω)
 R_in2   = 10**3       # Stage-2 input resistor    =  1 kΩ  (Ω)
-
+Vout = 5
 
 # ── Analysis ──────────────────────────────────────────────────
 # During the +5V half-cycle, integrator ramps DOWN by delta.
 # During the −5V half-cycle, integrator ramps UP by delta.
 # Net peak-to-peak at Stage-1 output = delta (one half-swing). 
 
-r_c = (5*2*R1)/(Vin_amp*T) 
+r_c = (Vout*2*R1)/(Vin_amp*T) 
 
 r_c = r_c / 10**6
 
@@ -453,8 +634,54 @@ plt.savefig('waveforms.png', dpi=150, bbox_inches='tight')
 plt.show()
 \end{lstlisting}
 
+\end{frame} 
+
+%------------------------------------------------------------- 
+\begin{frame}[fragile]{Python Code: Fourier--Laplace Verification}
+ 
+\lstset{basicstyle=\ttfamily\scriptsize}
+\begin{lstlisting}[language=Python]
+import numpy as np
+ 
+Vp=5.0; f0=50; w0=2*np.pi*f0; R1=10e3; C=1e-6
+R_kOhm=1.0; H2_mag=1.0    # Stage-2 gain = 1kOhm/1kOhm = 1
+ 
+t    = np.linspace(0, 4/f0, 20000)
+Vin  = np.zeros_like(t)
+Vout = np.zeros_like(t)
+ 
+for k in range(1000):
+    n     = 2*k + 1                      # odd harmonics only
+    A_in  = 4*Vp / (n*np.pi)            # square wave: decay 1/n
+    H1    = 1.0 / (n*w0*R1*C)           # integrator |H1|: decay 1/n
+    A_out = H1 * H2_mag * A_in          # output: decay 1/n^2
+    Vin  += A_in  * np.sin(n*w0*t)
+    Vout += A_out * np.cos(n*w0*t)      # +90 deg: sine -> cosine
+ 
+mask = t > 1/f0
+Vpp  = Vout[mask].max() - Vout[mask].min()
+ 
+# Analytical: Vpp = pi*Vp*H2 / (w0*R1*C)
+Vpp_a = np.pi*Vp*H2_mag / (w0*R1*C) 
+\end{lstlisting}
 \end{frame}
 
-%-------------------------------------------------------------
+\begin{frame}[fragile]{Python Code: Fourier--Laplace Verification}
+ 
+\lstset{basicstyle=\ttfamily\scriptsize}
+\begin{lstlisting}[language=Python]
+
+print(f"RC product           = {R_kOhm*(C*1e6):.2f} kOhm.uF")
+print(f"Simulated  Vpp       = {Vpp:.4f} V")
+print(f"Analytical Vpp       = {Vpp_a:.4f} V")
+print(f"Target               = 5.0000 V")
+print(f"Condition met        : {np.isclose(Vpp, 5.0, atol=0.05)}")
+# RC product           = 1.00 kOhm.uF
+# Simulated  Vpp       = 4.9990 V
+# Analytical Vpp       = 5.0000 V
+# Condition met        : True
+\end{lstlisting}
+ 
+\end{frame}
 
 \end{document}

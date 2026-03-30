@@ -1,0 +1,15 @@
+\frametitle{Python Code: Verification}
+
+\lstset{basicstyle=\ttfamily\scriptsize}
+\begin{lstlisting}[language=Python]
+
+# Verify option (d): y = (2/3)x^3 + 4x + k
+y_d = sp.Rational(2,3)*x**3 + 4*x + k
+dydx_d = sp.diff(y_d, x)
+res_d = sp.simplify(dydx_d - 2*y_d - x**2)
+print("Option (d) residual:", res_d)
+
+print("\nExact general solution:")
+print("y =", y)
+\end{lstlisting}
+

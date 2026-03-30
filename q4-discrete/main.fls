@@ -404,6 +404,11 @@ INPUT ./figs/rk4_plot.png
 INPUT ./figs/rk4_plot.png
 INPUT ./figs/rk4_plot.png
 INPUT ./figs/rk4_plot.png
+INPUT ./figs/rk4_options.png
+INPUT ./figs/rk4_options.png
+INPUT ./figs/rk4_options.png
+INPUT ./figs/rk4_options.png
+INPUT ./figs/rk4_options.png
 OUTPUT main.vrb
 INPUT ./main.vrb
 INPUT ./main.vrb
@@ -413,6 +418,11 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmitt10.tfm
+OUTPUT main.vrb
+INPUT ./main.vrb
+INPUT ./main.vrb
+INPUT main.vrb
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
@@ -422,7 +432,10 @@ OUTPUT main.vrb
 INPUT ./main.vrb
 INPUT ./main.vrb
 INPUT main.vrb
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmitt10.tfm
+OUTPUT main.vrb
+INPUT ./main.vrb
+INPUT ./main.vrb
+INPUT main.vrb
 OUTPUT main.vrb
 INPUT ./main.vrb
 INPUT ./main.vrb
